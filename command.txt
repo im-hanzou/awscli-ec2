@@ -27,6 +27,7 @@ $ aws ec2 run-instances --image-id ami-xxxxx --security-group-ids sg-xxxx --inst
 $ aws ec2 describe-instances --instance-ids i-xxxxxx --query 'Reservations[0].Instances[0].PublicIpAddress'
 
 # get password data (rdp only)
-$ aws ec2 get-password-data --instance-id  i-0a84d9471435fc9ed --priv-launch-key
+$ aws ec2 get-password-data --instance-id  i-xxxxx --priv-launch-key
+$ aws ec2 get-password-data --instance-id  i-xxxxx --priv-launch-key yourkey.pem
 
 SEE THE TUTORIAL VIDEO FOR DETAILS
