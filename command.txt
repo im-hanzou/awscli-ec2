@@ -18,10 +18,10 @@ $ aws ec2 authorize-security-group-ingress --group-name groupname --protocol tcp
 //for rdp
 
 # create keypair
-$ aws ec2 create-key-pair --key-name keyname --query 'KeyMaterial' --output text > yourkey.pem
+$ aws ec2 create-key-pair --key-name yourkeyname --query 'KeyMaterial' --output text > yourkey.pem
 
 # make instances
-$ aws ec2 run-instances --image-id ami-xxxxx --security-group-ids sg-xxxx --instance-type t2.selected-size --key-name yourkey
+$ aws ec2 run-instances --image-id ami-xxxxx --security-group-ids sg-xxxx --instance-type t2.selected-size --key-name yourkeyname
 
 # find  public ip address
 $ aws ec2 describe-instances --instance-ids i-xxxxxx --query 'Reservations[0].Instances[0].PublicIpAddress'
