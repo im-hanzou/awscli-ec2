@@ -1,0 +1,32 @@
+# configure aws key id and secret
+$ aws configure
+
+# see available region
+$ aws ec2 describe-regions --output table
+
+# make security group name
+$ aws ec2 create-security-group --group-name groupname --description "groupdescription"
+
+# open port for instances
+$ aws ec2 authorize-security-group-ingress --group-name groupname --protocol tcp --port 22 --cidr 0.0.0.0/0
+//for ssh
+$ aws ec2 authorize-security-group-ingress --group-name groupname --protocol tcp --port 443 --cidr 0.0.0.0/0
+//for https
+$ aws ec2 authorize-security-group-ingress --group-name groupname --protocol tcp --port 80 --cidr 0.0.0.0/0
+//for http
+$ aws ec2 authorize-security-group-ingress --group-name groupname --protocol tcp --port 3389 --cidr 0.0.0.0/0
+//for rdp
+
+# create keypair
+$ aws ec2 create-key-pair --key-name keyname --query 'KeyMaterial' --output text > yourkey.pem
+
+# make instances
+$ aws ec2 run-instances --image-id ami-xxxxx --security-group-ids sg-xxxx --instance-type t2.selected-size --key-name yourkey
+
+# find  public ip address
+$ aws ec2 describe-instances --instance-ids i-xxxxxx --query 'Reservations[0].Instances[0].PublicIpAddress'
+
+# get password data (rdp only)
+$ aws ec2 get-password-data --instance-id  i-0a84d9471435fc9ed --priv-launch-key
+
+SEE THE TUTORIAL VIDEO FOR DETAILS
