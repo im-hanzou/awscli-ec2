@@ -3,7 +3,7 @@ $ aws ec2 get-password-data --instance-id  i-xxxxx --priv-launch-key yourkey.pem
 {
 PasswordData : "xxxx"
 }
-Then login to rdp client software
+Then login to rdp client software with username Administrator
 
 # For VPS Ubuntu
 Use Bash
