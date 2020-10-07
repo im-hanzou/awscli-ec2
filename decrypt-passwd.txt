@@ -1,0 +1,11 @@
+# For RDP Windows
+$ aws ec2 get-password-data --instance-id  i-xxxxx --priv-launch-key yourkey.pem
+{
+PasswordData : "xxxx"
+}
+Then login to rdp client software
+
+# For VPS Ubuntu
+Use Bash
+$ chmod 400 yourkey.pem
+$ ssh -i yourkey.pem ubuntu@yourvpsip.xx.xx.xx
