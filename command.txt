@@ -30,4 +30,6 @@ $ aws ec2 describe-instances --instance-ids i-xxxxxx --query 'Reservations[0].In
 $ aws ec2 get-password-data --instance-id  i-xxxxx 
 $ aws ec2 get-password-data --instance-id  i-xxxxx --priv-launch-key yourkey.pem
 
+for vps ubuntu login, check decrypt-passwd.txt files in this repository
+
 SEE THE TUTORIAL VIDEO FOR DETAILS
